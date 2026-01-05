@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Tommy Lee's architecture portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tommy Lee">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="architecture, portfolio, Tommy Lee, design, civil engineering, computational design">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- #region Social Media -->
+    <meta property="og:title" content="Tommy Lee">
+    <meta property="og:description"
+        content="Explore Tommy Lee's architecture portfolio showcasing his skills in design, computational techniques, and engineering.">
+    <!-- <meta property="og:image" content="https://example.com/path-to-image.jpg">
+    <meta property="og:url" content="https://example.com"> -->
+    <meta property="og:type" content="website">
+
+    <!-- <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tommy Lee Info">
+    <meta name="twitter:description"
+        content="Explore Tommy Lee's architecture portfolio showcasing his skills in design, computational techniques, and engineering.">
+    <meta name="twitter:image" content="https://example.com/path-to-image.jpg"> -->
+    <!-- #endregion -->
+    <title>Tommy Lee Studio</title>
+    <link rel="stylesheet" href="./css/global.css?v=1.1">
+    <link rel="stylesheet" href="./css/style.css?v=1.1">
+    <script defer src="./javascript/global.js?v=1.1"></script>
+    <script defer src="./javascript/script_codeProject.js?v=1.2"></script>
+    <script defer src="https://kit.fontawesome.com/3519eba650.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="scrollable">
+
+    <header class="header">
+        <div class="site_header">
+            <div class="logoContainer">
+                <h2 class="logo">Tommy Lee</h2>
+            </div>
+            <div class="linkContainer">
+                <span class="projectButton is-active" aria-current="page">Projects</span>
+                <a id="info_projectPage" class="infoButton" href="./info.html">info</a>
+            </div>
+        </div>
+        <nav id="projectRow" class="projectRow">
+            <a class="projectRowButton" href="./index.html">Architectural</a>
+            <span class="projectRowButton is-active" aria-current="page">Coding</span>
+            <a class="projectRowButton" href="./otherProject.html">Other</a>
+        </nav>
+    </header>
+
+    <section class="projectList">
+        <h2 id="projectsHeading" class="sr-only">Architecture Projects</h2>
+
+        <ul class="projectGrid" role="list">
+            <li class="projectCard">
+                <button type="button" class="projectImgContainer" data-project data-key="SnakeGame"
+                    data-title="Snake Game" data-subtitle="" data-dir="./image/webp/Projects/SnakeGame/" data-count="1"
+                    data-ext=".webp" aria-label="Open project: Snake Game">
+                    <img src="./image/webp/Projects/SnakeGame/1.webp" alt="Snake Game - cover image"
+                        class="projectImg" loading="lazy" decoding="async" width="600" height="400">
+                    <span class="hoverProjectImgText">Snake Game</span>
+                </button>
+            </li>
+            <li class="projectCard">
+                <button type="button" class="projectImgContainer" data-project data-key="Yolo" data-title="Yolo"
+                    data-subtitle="" data-dir="./image/webp/Projects/Yolo/" data-count="1" data-ext=".webp"
+                    aria-label="Open project: YOLO AI Image Object Detection">
+                    <img src="./image/webp/Projects/Yolo/1.webp" alt="YOLO AI Image Object Detection - cover image"
+                        class="projectImg" loading="lazy" decoding="async" width="600" height="400">
+                    <span class="hoverProjectImgText">YOLO AI Image Object Detection</span>
+                </button>
+            </li>
+        </ul>
+    </section>
+
+
+    <div id="projectContainer" class="projectContainer hidden" role="dialog" aria-modal="true"
+        aria-labelledby="projectTitle" aria-hidden="true">
+        <div class="projectBackdrop" data-close="true"></div>
+
+        <div class="projectPanel">
+            <button type="button" id="closePopUp" class="closePopUp" data-close="true" title="Close"
+                aria-label="Close project viewer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="projectInfo" class="projectInfo scrollable">
+                <h4 id="projectTitle" class="projectTitle">Project title</h4>
+                <div id="imgSlide" class="imgSlide" aria-label="Project images">
+                    <button type="button" id="preArrow" class="preArrow" title="Previous" aria-label="Previous image">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </button>
+
+                    <div class="imgContainer">
+                        <img id="nestedImg" class="nestedImg" src="" alt="" width="1600" height="1000" decoding="async"
+                            fetchpriority="high">
+                    </div>
+
+                    <button type="button" id="nextArrow" class="nextArrow" title="Next" aria-label="Next image">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </button>
+                </div>
+
+                <div id="imageTrackerContainer" class="imageTrackerContainer">
+                    <span id="imageNumber" class="imageTracker">1</span>
+                    <span class="imageTracker">/</span>
+                    <span id="totalImage" class="imageTracker">1</span>
+                </div>
+
+                <div id="thumbnails" class="thumbnails scrollable" aria-label="Thumbnails"></div>
+
+                <div id="textContainer" class="textContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <template id="thumbnailTemplate">
+        <button type="button" class="thumbnailBtn" data-thumb aria-label="Go to image">
+            <img class="thumbnailImg" src="" alt="" width="120" height="80" loading="lazy" decoding="async">
+        </button>
+    </template>
+
+    <footer class="footer">
+        <div>
+            <p>© 2025 Tommy Lee. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

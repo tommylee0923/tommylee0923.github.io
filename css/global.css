@@ -1,0 +1,290 @@
+
+@font-face {
+    font-family: 'Futura';
+    src: url('../fonts/FuturaLT-Light.woff2') format('woff2'),
+         url('../fonts/FuturaLT-Light.woff') format('woff');
+    font-weight: 100; /* Futura Light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('../fonts/FuturaLT-Book.woff2') format('woff2'),
+         url('../fonts/FuturaLT-Book.woff') format('woff');
+    font-weight: 300; /* Futura Book */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('../fonts/FuturaLT-Heavy.woff2') format('woff2'),
+         url('../fonts/FuturaLT-Heavy.woff') format('woff');
+    font-weight: 700; /* Futura Light */
+    font-style: normal;
+}
+
+:root {
+    --background: rgb(247, 242, 244);
+    --scrollbar-width: 0px; /* default, will be updated via JS */
+}
+
+* {
+    font-family: 'Futura', sans-serif;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    margin: 0;
+    max-width: 100%;
+    overflow-y: scroll;
+    background-color: var(--background);
+    transition: 0s;
+}
+
+/* For Webkit browsers like Chrome, Safari */
+.scrollable::-webkit-scrollbar {
+    width: 7px; /* Set width for vertical scrollbar */
+    height: 7px; /* Set height for horizontal scrollbar */
+}
+
+.scrollable::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track (the empty space behind the scrollbar) */
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background: #666; /* Color of the scrollbar itself */
+    border-radius: 0px; /* Rounded corners for the scrollbar */
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+    background: #888; /* Darker color when hovering over the scrollbar */
+}
+
+/* for Firefox */
+.scrollable {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+body.no-scroll {
+    overflow: hidden;
+    padding-right: calc(var(--scrollbar-width));
+    transition: 0s;
+}
+
+#bodyInfo {
+    right: var(--scrollbar-width);
+}
+
+/* header starts */
+
+
+.header {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 50px;
+    padding-bottom: 90px;
+}
+
+.site_header {
+    display: flex;
+    justify-content: space-between; /* Distributes items with space between them */
+    align-items: bottom; /* Optional: aligns items vertically (centered) */
+    border: none;
+}
+
+
+.logoContainer {
+    margin: 0;
+    display: flex;
+    grid-area: logo;
+}
+
+.logo {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 500;
+    line-height: 36px;
+    text-transform: uppercase;
+    align-self: flex-end;
+}
+/* --------- Accessible utility --------- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* --------- Header nav --------- */
+.linkContainer {
+    grid-area: link;
+    display: flex;
+    gap: 18px;
+    align-items: flex-end;
+}
+
+.projectButton, .infoButton {
+    color: black;
+    display: inline-block;
+    min-width: 80px;
+    text-align: right;
+    padding-top: 66px;
+    font-size: 16px;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    background-color: var(--background);
+}
+
+.projectButton:hover, .infoButton:Hover {
+    color: black;
+    font-weight: 300;
+}
+
+.projectButton.is-active, .infoButton.is-active,
+.projectButton[aria-current="page"], .infoButton[aria-current="page"] {
+    color: black;
+    text-decoration: underline;
+    font-weight: 300;
+} 
+
+.projectButton a, .infoButton a {
+    display: inline-block;
+    min-width: 80px; /* Set a fixed or minimum width */
+    text-align: right;
+}
+
+/* --------- Project row --------- */
+
+.projectRow {
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    text-align: right;
+    display: flex;
+    gap: 1.3rem;
+    position: absolute;
+    right: 15%;
+}
+
+.projectRow.hidden { display:none; }
+
+.projectRowButton {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 100;
+    border: none;
+    padding: 0 0 1.3rem 1.3rem;
+    background-color: var(--background);
+    color: rgb(150, 150, 150);
+}
+
+.projectRowButton:hover {
+    color: black;
+    font-weight: 300;
+}
+
+.projectRowButton.is-active, .projectRowButton[aria-current="page"] {
+    color: black;
+    text-decoration: underline;
+    font-weight: 300;
+}
+
+.projectRowButton a {
+    border: 0;
+    padding: 0;
+    text-align: right;
+    text-decoration: none;
+    /* color: rgb(150, 150, 150); */
+}
+
+
+@media only screen and (max-width: 700px) {
+    .logo {
+        font-size: 2.4rem;
+        line-height: 30px;
+    }
+
+    #project_projectPage, #info_infoPage, #info_projectPage, #project_infoPage {
+        font-size: 14px;
+    }
+
+    .projectRowButton {
+        font-size:12px;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    .logo {
+        font-size: 2rem;
+        line-height: 24px;
+    }
+
+    #project_projectPage, #info_infoPage, #info_projectPage, #project_infoPage {
+        font-size: 1rem;
+    }
+
+    .projectRowButton {
+        font-size:.9rem;
+    }
+}
+
+@media only screen and (max-width: 490px) {
+    .logo {
+        font-size: 1.5rem;
+        line-height: 18px;
+    }
+
+    #project_projectPage, #info_infoPage, #info_projectPage, #project_infoPage {
+        font-size: 0.9rem;
+    }
+
+    .projectRowButton {
+        font-size:.8rem;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .logo {
+        font-size: 1rem;
+        line-height: 12px;
+    }
+
+    #project_projectPage, #info_infoPage, #info_projectPage, #project_infoPage {
+        font-size: 0.8rem;
+    }
+
+    .projectRowButton {
+        font-size:.6rem;
+    }
+}
+
+/* header ends */
+
+/* Footer */
+.footer {
+    color: black;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer p {
+    font-size: 12px;
+}
+
+
+/* info ends */

@@ -1,0 +1,498 @@
+/* project starts */
+.projectList {
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding:0 15%;
+}
+
+.projectGrid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.projectCard {
+    margin: 0;
+    padding: 0;
+}
+
+.projectList h5 {
+    text-align: right;
+    text-transform: capitalize;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    padding-top: 0.4rem;
+    padding-bottom: 1.2rem;
+    font-size: 14px;
+}
+
+.projectImgContainer {
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: inherit;
+    color: inherit;
+    cursor: pointer;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    display: block;
+}
+
+.projectImg {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.hoverProjectImgText { 
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 2;
+    pointer-events: none;
+} 
+
+.projectImgContainer:hover .projectImg {
+    opacity: 0.1;
+}
+
+.projectImgContainer:hover .hoverProjectImgText {
+    opacity: 1;
+    pointer-events: none;
+}
+
+.projectImgContainer.no-hover .hoverProjectImgText {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+/* --------- Modal Overlay --------- */
+
+#projectContainer {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#projectContainer.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#projectContainer:not(.hidden) {
+    opacity: 1;
+}
+
+/* backdrop */
+.projectBackdrop {
+    position: absolute;
+    inset: 0;
+    background: var(--background);
+}
+
+/* panel wrapper */
+.projectPanel {
+    position: relative;
+    z-index: 60;
+    width: min(1100px, 70vw);
+    height: min(92vh, 900px);
+}
+
+#projectInfo {
+    background-color: var(--background);
+    box-shadow: 0 0 30px 30px rgba(148, 148, 148, 0.617);
+    box-sizing: border-box;
+    position: relative;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.closePopUp {
+    cursor: pointer;
+    position: absolute;
+    top:14px;
+    right: 14px;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    transition: transform 0.8s;
+    z-index: 100;
+}
+
+.closePopUp:Hover { transform: scale(1.08); }
+
+@media only screen and (max-width: 970px) {
+    #projectInfo {
+        max-width: 100%;
+    }
+
+    .closePopUp {
+        position: fixed;
+        right: 18px;
+        font-size: 14px;
+    }
+}
+
+.projectTitle {
+    z-index: 4;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.imgSlide {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 550px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.preArrow {
+    background: var(--background);
+    grid-area: preArrow;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 15%;
+    border: none;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(180deg);
+    transition: 0s;
+    cursor: pointer;
+}
+
+.preArrow:hover {
+    background: linear-gradient(90deg, rgba(48, 48, 48, 0.137) 0%, var(--background) 100%);
+    transition: 0.8s;
+}
+
+.preArrow:active {
+    background:rgba(48, 48, 48, 0.137);
+    transition: 0s;
+}
+
+.imgContainer {
+    margin: 0;
+    padding: 0;
+    width: 600px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.nestedImg {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    box-sizing: border-box;
+    transition: 0s; 
+}
+
+.nextArrow {
+    background: var(--background);
+    grid-area: nextArrow;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 15%;
+    border: none;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    transition: 0s;
+    cursor: pointer;
+}
+
+.nextArrow:hover {
+    background: linear-gradient(-90deg, var(--background) 0%,rgba(48, 48, 48, 0.137) 100%);
+    transition: 0.8s;
+}
+
+.nextArrow:active {
+    background:rgba(48, 48, 48, 0.137);
+    transition: 0s;
+}
+
+/* --------- Thumbnails --------- */
+
+#thumbnails {
+    display: flex;
+    gap: 12px;
+    margin: 30px;
+    padding: 30px 0;
+    overflow-x: auto;
+    align-items: center;
+}
+
+.thumbnailImg {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.thumbnailBtn {
+    background-color: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.thumbnailBtn.active .thumbnailImg {
+    opacity: 1;
+}
+
+.thumbnailBtn:not(.active):hover .thumbnailImg {
+    opacity: 1;
+}
+
+.thumbnail {
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;  
+    display: block;     
+    margin: 0;     
+    opacity: 0.5;       
+    transition: opacity 0.3s ease; 
+}
+
+.thumbnail.active {
+    opacity: 1;  /* Full opacity for the active thumbnail */
+}
+
+/* Hover effect for non-active thumbnails */
+.thumbnail:not(.active):hover {
+    opacity: 1;  /* Full opacity when hovered, but only for non-active thumbnails */
+}
+
+#imageTrackerContainer {
+    margin: 0;
+    padding: 10px 0;
+    padding-right: 2.1em;
+    text-align: right;
+}
+
+.imageTracker {
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+    font-size: .9rem;
+    text-align: right;
+}
+
+.projectDescription {
+    margin: 30px;
+    line-height: 20px;
+    font-size: 1rem;
+}
+
+.subInfo {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.subTitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 850px) {
+    .imgSlide {
+        height: 550px;
+    }
+
+    .imgContainer {
+        width: 550px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .imgSlide {
+height: 500px;
+    }
+
+    .imgContainer {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .imgSlide {
+        height: 400px;
+    }
+
+    .imgContainer {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    .imgSlide {
+        height: 350px;
+    }
+
+    .imgContainer {
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+.projectTitle {
+    font-size: 1.2rem;
+}
+
+    .imgContainer {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+
+    .imgContainer {
+        width: 250px;
+    }
+}
+
+/* project ends */
+
+/* resume starts */
+
+.resume {
+    background-color: var(--background);
+    padding: 0 15%;
+    border-bottom: 5px;
+    transition: 0.3s;
+}
+
+.resume section {
+    margin-bottom: 60px;
+}
+
+.resume h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: black;
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+}
+
+.resume h3 {
+    font-size: 1.2rem;
+}
+
+.resume li {
+    font-size: 1rem;
+    line-height: 30px;
+    font-weight: 100;
+}
+
+/* About Me Section */
+
+.email {
+    gap: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Experience Section */
+.experience .job {
+    margin-bottom: 30px;
+}
+
+.experience .company {
+    font-size: 16px;
+    color: rgb(180, 180, 180);
+}
+
+
+/* Education Section */
+.education .school {
+    margin-bottom: 30px;
+}
+
+.education p {
+    font-size: 16px;
+    color: rgb(180, 180, 180);
+}
+
+/* Skills Section */
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills li {
+    margin: 5px 0;
+    padding: 10px 0;
+}
+
+.awards {
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 700px) {
+    .resume h2 {
+        font-size: 1.2rem;
+    }
+
+    .resume h3 {
+        font-size: 1.0rem;
+    }
+
+    .resume p, .resume li {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 430px) { 
+    .resume h2 {
+        font-size: 1.2rem;
+    }
+
+    .resume h3 {
+        font-size: 1.0rem;
+    }
+
+    .resume p, .resume li {
+        font-size: 0.8rem;
+    }
+}

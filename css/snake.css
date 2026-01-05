@@ -1,0 +1,194 @@
+:root {
+    --color3: #595f43; /* 1st border */
+    --color2: #abb78a; /* 2nd border */
+    --color1: #c4cfa3; /* 3rd border */
+    --color4: #8b966c; /* Board background */
+    --scrollbar-width: 0px; /* default, will be updated via JS */
+}
+
+.vt323-regular {
+    font-family: "VT323", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'VT323', monospace;
+    overflow: hidden;
+}
+
+body,
+.snake {
+    background-color: #414141;
+}
+
+.closePopUp {
+    cursor: pointer;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top:20px;
+    right: 5%;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    transition: 0.8s;
+    z-index: 100;
+}
+
+#snakeClosePopUp {
+    color: antiquewhite;
+}
+
+#game-board {
+    border-radius: 100px;
+    display: grid;
+    grid-template-columns: repeat(30, 20px);
+    grid-template-rows: repeat(30, 20px);
+    margin: 5px;
+}
+
+.game-border-1 {
+    border: var(--color3) solid 10px;
+    border-radius: 30px;
+    box-shadow: inset 0 0 0 10px var(--color3);
+    /*add box-shadows to cover up the border-radius difference */
+}
+
+.game-border-2 {
+    border: var(--color2) solid 8px;
+    border-radius: 26px;
+    box-shadow: inset 0 0 0 10px var(--color2);
+}
+
+.game-border-3 {
+    border: var(--color4) solid 30px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 5px var(--color4);
+    background-color: var(--color1);
+}
+
+#instructionText {
+    position: absolute;
+    top: 60%;
+    color: #333;
+    width: 400px;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 30px;
+    margin: 0;
+    z-index: 2;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-between;
+}
+
+#score {
+    color: var(--color2);
+}
+
+#score,
+#highScore {
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+#highScoreText {
+    display: inline-block;
+    color: #d8ddca;
+}
+
+#scoreText {
+    display: inline-block;
+    color: var(--color2)
+}
+
+#highScore {
+    color: #d8ddca;
+    display: inline-block;
+}
+
+
+
+.snake {
+    border: #5a5a5a 1px dotted;
+}
+
+.food {
+    background-color: #dedede;
+    border: #999 5px solid;
+}
+
+#logo {
+    position: absolute;
+    width: 450px;
+    padding-bottom: 50px;
+    pointer-events: none;
+}
+
+.controls {
+    display: none; /* Hidden by default */
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    align-items: center;
+}
+
+.horizontal-controls {
+    display: flex;
+    gap: 80px;
+}
+
+button {
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+    border-radius: 100%;
+    border: none;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    cursor: pointer;
+}
+
+button:active {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.theme-picker {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    gap: 20px;
+}
+
+.theme-btn {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.theme-btn:nth-child(1) { background: #FFBEC2; }
+.theme-btn:nth-child(2) { background: #B2D9D6; }
+.theme-btn:nth-child(3) { background: #c4cfa3; }
+
+.smallText {
+    display: flex;
+    justify-content: center;
+    color: #d8ddca;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 1rem;
+}

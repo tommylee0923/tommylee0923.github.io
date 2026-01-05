@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+Potential ideas:
+
+Add a pause menu
+Add some text, such as score, highscore...
+Add a gameover text
+ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="./css/snake.css">
+    <script src="./javascript/script_snake.js?v=1.1" defer></script>
+    <script src="https://kit.fontawesome.com/3519eba650.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <button id="snakeClosePopUp" class="closePopUp" title="Close" onclick="window.location.href='./codeProject.html';">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div>
+        <div class="scores">
+            <div>
+                <h1 id="scoreText">Score </h1>
+                <h1 id="score">000</h1>
+            </div>
+            <div>
+                <h1 id="highScoreText">Highscore </h1>
+                <h1 id="highScore">000</h1>
+            </div>
+        </div>
+        <div class="game-border-1">
+            <div class="game-border-2">
+                <div id="game-board-background"class="game-border-3">
+                    <div id="game-board"></div>
+                </div>
+            </div>
+        </div>
+        <div class="theme-picker">
+            <button class="theme-btn" data-theme="red"></button>
+            <button class="theme-btn" data-theme="blue"></button>
+            <button class="theme-btn" data-theme="green"></button>
+        </div>
+        <div class="smallText">Use arrow keys (keyboard) or on-screen keypads (mobile devices).
+            <br>Pick a color to change the theme!
+            <br><br>© 2025 Tommy Lee. All rights reserved.
+        </div>
+        <div class="controls">
+            <button id="up">▲</button>
+            <div class="horizontal-controls">
+                <button id="left">◀</button>
+                <button id="right">▶</button>
+            </div>
+            <button id="down">▼</button>
+        </div>
+        
+    </div>
+    <h1 id="instructionText">Press Spacebar or click the board to Start the Game.</h1>
+    <img id="logo" src="./image/Projects/SnakeGame/snake_logo.jpg" alt="snake-logo" />
+</body>
+
+</html>

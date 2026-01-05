@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Tommy Lee's portfolio — other work">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Tommy Lee">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta property="og:title" content="Tommy Lee">
+  <meta property="og:description" content="Other work by Tommy Lee.">
+  <meta property="og:type" content="website">
+
+  <title>Tommy Lee Studio</title>
+
+  <link rel="stylesheet" href="./css/global.css?v=1.1">
+  <link rel="stylesheet" href="./css/style.css?v=1.1">
+
+  <script defer src="./javascript/global.js?v=1.1"></script>
+  <!-- Optional: add later when you create content -->
+  <!-- <script defer src="./javascript/script_otherProject.js?v=1.1"></script> -->
+
+  <script defer src="https://kit.fontawesome.com/3519eba650.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="scrollable">
+  <header class="header">
+    <div class="site_header">
+      <div class="logoContainer">
+        <h2 class="logo">Tommy Lee</h2>
+      </div>
+
+      <nav class="linkContainer" aria-label="Primary">
+        <a class="projectButton" href="./index.html">Projects</a>
+        <a class="infoButton" href="./info.html">Info</a>
+      </nav>
+    </div>
+
+    <nav class="projectRow" aria-label="Project categories">
+      <a class="projectRowButton" href="./index.html">Architectural</a>
+      <a class="projectRowButton" href="./codeProject.html">Coding</a>
+      <span class="projectRowButton is-active" aria-current="page">Other</span>
+    </nav>
+  </header>
+
+  <main class="projectList" aria-labelledby="projectsHeading">
+    <h2 id="projectsHeading" class="sr-only">Other Projects</h2>
+
+    <!-- If you have no items yet, keep a simple placeholder -->
+    <p style="text-align:center; padding: 2rem 0;">Coming soon.</p>
+
+    <!-- When you add projects, use this structure:
+    <ul class="projectGrid" role="list">
+      <li class="projectCard">
+        <button
+          type="button"
+          class="projectImgContainer"
+          data-project
+          data-key="SomeOtherThing"
+          data-title="Some Other Thing"
+          data-subtitle="2025"
+          data-dir="./image/webp/Projects/SomeOtherThing/"
+          data-count="5"
+          data-ext=".webp"
+          aria-label="Open project: Some Other Thing, 2025"
+        >
+          <img class="projectImg" src="./image/webp/Projects/SomeOtherThing/1.webp"
+               alt="Some Other Thing cover image" loading="lazy" decoding="async">
+          <span class="hoverProjectImgText">Some Other Thing, 2025</span>
+        </button>
+      </li>
+    </ul>
+    -->
+  </main>
+
+  <!-- Modal (reuse your new standard modal structure) -->
+  <div
+    id="projectContainer"
+    class="projectContainer hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="projectTitle"
+    aria-hidden="true"
+  >
+    <div class="projectBackdrop" data-close="true"></div>
+
+    <div class="projectPanel">
+      <button
+        type="button"
+        id="closePopUp"
+        class="closePopUp"
+        data-close="true"
+        title="Close"
+        aria-label="Close project viewer"
+      >
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+
+      <div id="projectInfo" class="projectInfo scrollable">
+        <h2 id="projectTitle" class="projectTitle">Project title</h2>
+        <p id="projectSubtitle" class="projectSubtitle"></p>
+
+        <div id="imgSlide" class="imgSlide" aria-label="Project images">
+          <button type="button" id="preArrow" class="preArrow" title="Previous" aria-label="Previous image">
+            <i class="fa-solid fa-angle-left" aria-hidden="true"></i>
+          </button>
+
+          <div class="imgContainer">
+            <img id="nestedImg" class="nestedImg" src="" alt="" decoding="async">
+          </div>
+
+          <button type="button" id="nextArrow" class="nextArrow" title="Next" aria-label="Next image">
+            <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div id="imageTrackerContainer" class="imageTrackerContainer" aria-live="polite">
+          <span id="imageNumber" class="imageTracker">1</span>
+          <span class="imageTracker">/</span>
+          <span id="totalImage" class="imageTracker">1</span>
+        </div>
+
+        <div id="thumbnails" class="thumbnails scrollable" aria-label="Thumbnails"></div>
+        <div id="textContainer" class="textContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <template id="thumbnailTemplate">
+    <button type="button" class="thumbnailBtn" data-thumb aria-label="Go to image">
+      <img class="thumbnailImg" src="" alt="" width="120" height="80" loading="lazy" decoding="async">
+    </button>
+  </template>
+
+  <footer class="footer">
+    <div><p>© 2025 Tommy Lee. All rights reserved.</p></div>
+  </footer>
+</body>
+</html>
