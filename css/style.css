@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding:0 15%;
+    padding: 0 15%;
 }
 
 .projectGrid {
@@ -57,7 +57,7 @@
     z-index: 1;
 }
 
-.hoverProjectImgText { 
+.hoverProjectImgText {
     position: absolute;
     width: 100%;
     top: 50%;
@@ -69,7 +69,7 @@
     transition: opacity 0.3s;
     z-index: 2;
     pointer-events: none;
-} 
+}
 
 .projectImgContainer:hover .projectImg {
     opacity: 0.1;
@@ -133,7 +133,7 @@
 .closePopUp {
     cursor: pointer;
     position: absolute;
-    top:14px;
+    top: 14px;
     right: 14px;
     font-size: 18px;
     background-color: transparent;
@@ -142,7 +142,9 @@
     z-index: 100;
 }
 
-.closePopUp:Hover { transform: scale(1.08); }
+.closePopUp:Hover {
+    transform: scale(1.08);
+}
 
 @media only screen and (max-width: 970px) {
     #projectInfo {
@@ -198,7 +200,7 @@
 }
 
 .preArrow:active {
-    background:rgba(48, 48, 48, 0.137);
+    background: rgba(48, 48, 48, 0.137);
     transition: 0s;
 }
 
@@ -220,7 +222,7 @@
     height: 100%;
     object-fit: contain;
     box-sizing: border-box;
-    transition: 0s; 
+    transition: 0s;
 }
 
 .nextArrow {
@@ -240,12 +242,12 @@
 }
 
 .nextArrow:hover {
-    background: linear-gradient(-90deg, var(--background) 0%,rgba(48, 48, 48, 0.137) 100%);
+    background: linear-gradient(-90deg, var(--background) 0%, rgba(48, 48, 48, 0.137) 100%);
     transition: 0.8s;
 }
 
 .nextArrow:active {
-    background:rgba(48, 48, 48, 0.137);
+    background: rgba(48, 48, 48, 0.137);
     transition: 0s;
 }
 
@@ -288,20 +290,22 @@
     cursor: pointer;
     width: 80px;
     height: 80px;
-    object-fit: cover;  
-    display: block;     
-    margin: 0;     
-    opacity: 0.5;       
-    transition: opacity 0.3s ease; 
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
 }
 
 .thumbnail.active {
-    opacity: 1;  /* Full opacity for the active thumbnail */
+    opacity: 1;
+    /* Full opacity for the active thumbnail */
 }
 
 /* Hover effect for non-active thumbnails */
 .thumbnail:not(.active):hover {
-    opacity: 1;  /* Full opacity when hovered, but only for non-active thumbnails */
+    opacity: 1;
+    /* Full opacity when hovered, but only for non-active thumbnails */
 }
 
 #imageTrackerContainer {
@@ -347,7 +351,7 @@
 
 @media only screen and (max-width: 700px) {
     .imgSlide {
-height: 500px;
+        height: 500px;
     }
 
     .imgContainer {
@@ -376,9 +380,9 @@ height: 500px;
 }
 
 @media only screen and (max-width: 430px) {
-.projectTitle {
-    font-size: 1.2rem;
-}
+    .projectTitle {
+        font-size: 1.2rem;
+    }
 
     .imgContainer {
         width: 300px;
@@ -397,146 +401,152 @@ height: 500px;
    ========================= */
 
 @media (max-width: 768px) {
-  /* Reduce huge horizontal padding */
-  .projectList {
-    padding: 0 6%;
-  }
 
-  /* Header stacks instead of fighting for space */
-  .site_header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
+    /* Reduce huge horizontal padding */
+    .projectList {
+        padding: 0 6%;
+    }
 
-  .logoContainer {
-    padding-left: 0;
-  }
+    /* Header stacks instead of fighting for space */
+    .site_header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
 
-  /* Top nav: Projects / Info */
-  .linkContainer {
-    padding-right: 0;
-    width: 100%;
-    justify-content: flex-start;
-    gap: 14px;
-  }
+    .logoContainer {
+        padding-left: 0;
+    }
 
-  .projectButton, .infoButton {
-    padding-top: 0;            /* kill the big desktop padding */
-    min-width: auto;
-    font-size: 14px;
-  }
+    /* Top nav: Projects / Info */
+    .linkContainer {
+        padding-right: 0;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 14px;
+    }
 
-  /* Category row: stop absolute positioning */
-  .projectRow {
-    position: static;
-    right: auto;
-    width: 100%;
-    justify-content: flex-start;
-    gap: 14px;
-    padding: 10px 0 0 0;
-  }
+    .projectButton,
+    .infoButton {
+        padding-top: 0;
+        /* kill the big desktop padding */
+        min-width: auto;
+        font-size: 14px;
+    }
 
-  .projectRowButton {
-    padding: 0;
-    font-size: 14px;
-  }
+    /* Category row: stop absolute positioning */
+    .projectRow {
+        position: static;
+        right: auto;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 14px;
+        padding: 10px 0 0 0;
+    }
 
-  /* Grid: 2 columns on mobile */
-  .projectGrid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
+    .projectRowButton {
+        padding: 0;
+        font-size: 14px;
+    }
 
-  /* Tile size becomes fluid */
-  .projectImgContainer {
-    width: 100%;
-    height: auto; /* let image define height */
-    aspect-ratio: 1 / 1; /* keeps your square tiles */
-  }
+    /* Grid: 2 columns on mobile */
+    .projectGrid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
 
-  .projectImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    /* Tile size becomes fluid */
+    .projectImgContainer {
+        width: 100%;
+        height: auto;
+        /* let image define height */
+        aspect-ratio: 1 / 1;
+        /* keeps your square tiles */
+    }
 
-  /* Hover text: make it smaller so it doesn't overwhelm */
-  .hoverProjectImgText {
-    font-size: 12px;
-    padding: 8px;
-  }
+    .projectImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-  /* Modal: full screen, easier on phones */
-  #projectContainer {
-    align-items: stretch;
-    justify-content: stretch;
-  }
+    /* Hover text: make it smaller so it doesn't overwhelm */
+    .hoverProjectImgText {
+        font-size: 12px;
+        padding: 8px;
+    }
 
-  .projectPanel {
-    width: 100%;
-    height: 100%;
-  }
+    /* Modal: full screen, easier on phones */
+    #projectContainer {
+        align-items: stretch;
+        justify-content: stretch;
+    }
 
-  #projectInfo {
-    width: 100%;
-    height: 100%;
-    box-shadow: none;
-  }
+    .projectPanel {
+        width: 100%;
+        height: 100%;
+    }
 
-  /* Image viewer: reduce margins */
-  .imgSlide {
-    margin: 10px;
-  }
+    #projectInfo {
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+    }
 
-  .imgContainer {
-    width: 100%;
-    height: auto;
-  }
+    /* Image viewer: reduce margins */
+    .imgSlide {
+        margin: 10px;
+    }
 
-  .nestedImg {
-    width: 100%;
-    height: auto;
-    max-height: 55vh; /* prevents it from pushing everything down */
-    object-fit: contain;
-  }
+    .imgContainer {
+        width: 100%;
+        height: auto;
+    }
 
-  /* Thumbnails: shorter strip */
-  #thumbnails {
-    margin: 10px;
-    padding: 10px 0;
-    gap: 10px;
-  }
+    .nestedImg {
+        width: 100%;
+        height: auto;
+        max-height: 55vh;
+        /* prevents it from pushing everything down */
+        object-fit: contain;
+    }
 
-  .thumbnailImg {
-    width: 60px;
-    height: 60px;
-  }
+    /* Thumbnails: shorter strip */
+    #thumbnails {
+        margin: 10px;
+        padding: 10px 0;
+        gap: 10px;
+    }
 
-  /* Close button stays reachable */
-  .closePopUp {
-    top: 10px;
-    right: 10px;
-  }
+    .thumbnailImg {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Close button stays reachable */
+    .closePopUp {
+        top: 10px;
+        right: 10px;
+    }
 }
 
 /* Even smaller phones: 1 column */
 @media (max-width: 420px) {
-  .projectGrid {
-    grid-template-columns: 1fr;
-  }
+    .projectGrid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-  .hoverProjectImgText {
-    opacity: 1;
-    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
-    color: white;
-    bottom: 0;
-    top: auto;
-    justify-content: flex-end;
-  }
+    .hoverProjectImgText {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+        color: white;
+        bottom: 0;
+        top: auto;
+        justify-content: flex-end;
+    }
 }
 
 
@@ -556,15 +566,19 @@ height: 500px;
 }
 
 .resume h2 {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    color: black;
-    border-bottom: 1px solid;
-    padding-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
 }
 
-.resume h3 {
-    font-size: 1.2rem;
+.resume p {
+    line-height: 1.7;
+    font-weight: 300;
+    margin: 0 0 1rem 0;
 }
 
 .resume li {
@@ -573,48 +587,137 @@ height: 500px;
     font-weight: 100;
 }
 
+.resumeContainer {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
 /* About Me Section */
 
-.email {
-    gap: 10%;
-    justify-content: center;
-    align-items: center;
+.infoBlock {
+    margin-bottom: 3.2rem;
+    max-width: 760px;
 }
 
-/* Experience Section */
-.experience .job {
-    margin-bottom: 30px;
+/* ---------- HERO ---------- */
+.hero {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
-.experience .company {
-    font-size: 16px;
-    color: rgb(180, 180, 180);
+.heroEyebrow {
+  margin: 0 0 0.6rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  opacity: 0.65;
+}
+
+.heroTitle {
+  margin: 0 0 0.8rem 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+}
+
+.heroLead {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  max-width: 60ch;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr 230px;
+  gap: 1.6rem;
+  align-items: start;
+}
+
+.heroPhoto img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+/* Mobile: stack */
+@media (max-width: 768px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroPhoto img {
+    width: 180px;
+    border-radius: 16px;
+  }
 }
 
 
-/* Education Section */
-.education .school {
-    margin-bottom: 30px;
+/* ---------- CONTACT ROW ---------- */
+.contactRow {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
-.education p {
-    font-size: 16px;
-    color: rgb(180, 180, 180);
+.contactRow a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.6;
 }
 
-/* Skills Section */
-.skills ul {
-    list-style-type: none;
-    padding: 0;
+.contactRow a:hover {
+  opacity: 1;
+  border-bottom-color: rgba(0,0,0,0.45);
 }
 
-.skills li {
-    margin: 5px 0;
-    padding: 10px 0;
+/* ---------- PRINCIPLES LIST ---------- */
+.principles {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0 0 0;
 }
 
-.awards {
-    margin-bottom: 30px;
+/* ---------- OPTIONAL PULL QUOTE ---------- */
+blockquote.pullQuote {
+  margin: 1.8rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid rgba(0,0,0,0.25);
+  background: rgba(255,255,255,0.25);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ---------- “CARD” FEEL WITHOUT HEAVY UI ---------- */
+.infoBlock + .infoBlock {
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 2.2rem;
+}
+
+/* ---------- Responsive: Info page ---------- */
+@media (max-width: 768px) {
+  .resume {
+    padding: 0 6%;
+  }
+
+  .infoBlock {
+    margin-bottom: 2.6rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(1.5rem, 6vw, 2.1rem);
+  }
+
+  .contactRow {
+    gap: 0.9rem;
+  }
+
+  .principles li {
+    padding: 0.8rem 0.9rem;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -626,12 +729,13 @@ height: 500px;
         font-size: 1.0rem;
     }
 
-    .resume p, .resume li {
+    .resume p,
+    .resume li {
         font-size: 0.8rem;
     }
 }
 
-@media only screen and (max-width: 430px) { 
+@media only screen and (max-width: 430px) {
     .resume h2 {
         font-size: 1.2rem;
     }
@@ -640,7 +744,8 @@ height: 500px;
         font-size: 1.0rem;
     }
 
-    .resume p, .resume li {
+    .resume p,
+    .resume li {
         font-size: 0.8rem;
     }
 }
