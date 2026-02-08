@@ -84,7 +84,6 @@
 }
 
 .homeSection {
-    max-width: 760px;
     padding-top: 2.2rem;
     border-top: 1px solid var(--accent-soft);
 }
@@ -758,7 +757,7 @@ mark.keyword {
 }
 
 .resume section {
-    margin-bottom: 60px;
+    margin: 0 auto;
 }
 
 .resume h2 {
