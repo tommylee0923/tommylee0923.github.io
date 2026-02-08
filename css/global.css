@@ -27,10 +27,11 @@
 
 :root {
     --background: rgb(247, 242, 244);
-    --scrollbar-width: 0px;    /* default, will be updated via JS */
-   
+    --scrollbar-width: 0px;
+    /* default, will be updated via JS */
+
     /* Accent colors */
-    --accent: #0F766E;
+    --accent: #0f766e;
     --accent-soft: rgba(15, 118, 110, 0.14);
     --text: rgba(0, 0, 0, 0.88);
     --muted: rgba(0, 0, 0, 0.62);
@@ -215,8 +216,8 @@ body.no-scroll {
 .infoButton.is-active,
 .projectRowButton.is-active,
 [aria-current="page"] {
-  color: var(--accent) !important;
-  text-decoration-color: var(--accent);
+    color: var(--accent) !important;
+    text-decoration-color: var(--accent);
 }
 
 /* --------- Project row --------- */
@@ -266,10 +267,18 @@ body.no-scroll {
 }
 
 
-@media only screen and (max-width: 700px) {
-    .logo {
+@media only screen and (max-width: 768px) {
+
+    .header {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+    
+    .logo,
+    .homePage {
         font-size: 2.4rem;
         line-height: 30px;
+        padding-bottom: 20px;
     }
 
     #project_projectPage,
@@ -285,8 +294,10 @@ body.no-scroll {
 }
 
 @media only screen and (max-width: 570px) {
-    .logo {
-        font-size: 2rem;
+
+    .logo,
+    .homePage {
+        font-size: 2.2rem;
         line-height: 24px;
     }
 
@@ -303,8 +314,10 @@ body.no-scroll {
 }
 
 @media only screen and (max-width: 490px) {
-    .logo {
-        font-size: 1.5rem;
+
+    .logo,
+    .homePage {
+        font-size: 2rem;
         line-height: 18px;
     }
 
@@ -321,8 +334,10 @@ body.no-scroll {
 }
 
 @media only screen and (max-width: 430px) {
-    .logo {
-        font-size: 1rem;
+
+    .logo,
+    .homePage {
+        font-size: 1.8rem;
         line-height: 12px;
     }
 
