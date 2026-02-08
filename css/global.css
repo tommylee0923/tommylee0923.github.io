@@ -26,13 +26,13 @@
 }
 
 :root {
-    --background: rgb(247, 242, 244);
+    --background: rgb(247, 247, 242);
     --scrollbar-width: 0px;
     /* default, will be updated via JS */
 
     /* Accent colors */
-    --accent: #0f766e;
-    --accent-soft: rgba(15, 118, 110, 0.14);
+    --accent: #83103a;
+    --accent-soft: #a79098;
     --text: rgba(0, 0, 0, 0.88);
     --muted: rgba(0, 0, 0, 0.62);
 }

@@ -42,8 +42,8 @@
 .homeTitle::after {
     content: "";
     display: block;
-    width: 150px;
-    height: 3px;
+    width: 320px;
+    height: 4px;
     background: var(--accent);
     margin-top: 14px;
     opacity: 0.9;
@@ -86,7 +86,7 @@
 .homeSection {
     max-width: 760px;
     padding-top: 2.2rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-top: 1px solid var(--accent-soft);
 }
 
 .homeSectionTitle {
@@ -766,7 +766,7 @@ mark.keyword {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid #a79098;
     padding-bottom: 10px;
     margin-bottom: 18px;
     color: var(--accent);
@@ -852,7 +852,7 @@ mark.keyword {
     width: 100%;
     height: auto;
     object-fit: cover;
-    box-shadow: 4px 4px var(--accent);
+    box-shadow: 8px 8px var(--accent);
 }
 
 /* Mobile: stack */
@@ -913,7 +913,6 @@ blockquote.pullQuote {
 
 /* ---------- “CARD” FEEL WITHOUT HEAVY UI ---------- */
 .infoBlock+.infoBlock {
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
     padding-top: 2.2rem;
 }
 
