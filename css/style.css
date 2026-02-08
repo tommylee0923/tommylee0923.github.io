@@ -1,4 +1,168 @@
-/* project starts */
+
+/* =========================
+   Homepage
+   ========================= */
+
+.home {
+  padding: 0 15%;
+}
+
+.homeContainer {
+  max-width: 980px;   /* matches .resumeContainer */
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.homeHero {
+  padding-top: 0.5rem;
+  padding-bottom: 2.2rem;
+}
+
+.homeEyebrow {
+  margin: 0 0 0.8rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  opacity: 0.85;
+  color: var(--muted);
+}
+
+.homeTitle {
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.homeTitle .highlight {
+    font-weight: 500;
+}
+
+.homeTitle::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 3px;
+  background: var(--accent);
+  margin-top: 14px;
+  opacity: 0.9;
+}
+
+.homeLead {
+  margin: 0 0 1.2rem 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+  opacity: 0.88;
+  max-width: 62ch;
+}
+
+.homeCtas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+}
+
+.homeCtas a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.homeCtas a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.homeLinkStrong {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.homeSection {
+  max-width: 760px;
+  padding-top: 2.2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.homeSectionTitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 1rem 0;
+  color: var(--accent);
+}
+
+.homeList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.homeListTitle {
+  display: block;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.homeListBody {
+  display: block;
+  color: var(--text);
+  opacity: 0.88;
+  line-height: 1.6;
+  max-width: 72ch;
+}
+
+.homeMeta {
+  padding-bottom: 1.2rem;
+}
+
+.homeMetaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.6rem;
+}
+
+.homeMetaItem {
+  font-size: 0.95rem;
+  color: var(--text);
+  opacity: 0.78;
+}
+
+.homeMetaDot {
+  opacity: 0.35;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home {
+    padding: 0 6%;
+  }
+
+  .homeTitle {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  .homeLead {
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   Projects
+   ========================= */
 .projectList {
     gap: 1rem;
     display: flex;
@@ -552,7 +716,10 @@
 
 /* project ends */
 
-/* resume starts */
+/* =========================
+   Info
+   ========================= */
+
 
 .resume {
     background-color: var(--background);
@@ -561,24 +728,44 @@
     transition: 0.3s;
 }
 
+mark.keyword {
+    background: none;
+    color: var(--accent);
+}
+
+.resume a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+    padding-bottom: 2px;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.resume a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
 .resume section {
     margin-bottom: 60px;
 }
 
 .resume h2 {
     font-size: 1.1rem;
-    font-weight: 300;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     padding-bottom: 10px;
     margin-bottom: 18px;
+    color: var(--accent);
 }
 
 .resume p {
     line-height: 1.7;
     font-weight: 300;
     margin: 0 0 1rem 0;
+    color: var(--text);
 }
 
 .resume li {
@@ -601,123 +788,147 @@
 
 /* ---------- HERO ---------- */
 .hero {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .heroEyebrow {
-  margin: 0 0 0.6rem 0;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.75rem;
-  opacity: 0.65;
+    margin: 0 0 0.6rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    opacity: 0.65;
+    color: var(--muted);
 }
 
 .heroTitle {
-  margin: 0 0 0.8rem 0;
-  font-weight: 500;
-  text-transform: uppercase;
-  line-height: 1.1;
-  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+    margin: 0 0 0.8rem 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.1;
+    font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+    position: realtive;
+}
+
+.heroTitle .highlight {
+    font-weight: 500;
+}
+
+.heroTitle::after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 3px;
+    background: var(--accent);
+    margin-top: 14px;
+    opacity: 0.9;
 }
 
 .heroLead {
-  font-size: 1.05rem;
-  opacity: 0.85;
-  max-width: 60ch;
+    font-size: 1.05rem;
+    opacity: 0.85;
+    max-width: 60ch;
 }
 
 .heroGrid {
-  display: grid;
-  grid-template-columns: 1fr 230px;
-  gap: 1.6rem;
-  align-items: start;
+    display: grid;
+    grid-template-columns: 1fr 230px;
+    gap: 1.6rem;
+    align-items: start;
 }
 
 .heroPhoto img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border: 1px solid rgba(0,0,0,0.12);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 4px 4px var(--accent);
 }
 
 /* Mobile: stack */
 @media (max-width: 768px) {
-  .heroGrid {
-    grid-template-columns: 1fr;
-  }
+    .heroGrid {
+        grid-template-columns: 1fr;
+    }
 
-  .heroPhoto img {
-    width: 180px;
-    border-radius: 16px;
-  }
+    .heroPhoto img {
+        width: 180px;
+        border-radius: 16px;
+    }
 }
 
 
 /* ---------- CONTACT ROW ---------- */
 .contactRow {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .contactRow a {
-  text-decoration: none;
-  font-size: 0.95rem;
-  opacity: 0.6;
+    text-decoration: none;
+    font-size: 0.95rem;
+    opacity: 0.6;
+    border-bottom-color: rgba(0, 0, 0, 0.18);
 }
 
 .contactRow a:hover {
-  opacity: 1;
-  border-bottom-color: rgba(0,0,0,0.45);
+    opacity: 1;
+    color: var(--accent);
+    border-bottom-color: var(--accent);
 }
 
 /* ---------- PRINCIPLES LIST ---------- */
 .principles {
-  list-style: none;
-  padding: 0;
-  margin: 1.2rem 0 0 0;
+    list-style: none;
+    padding: 0;
+    margin: 1.2rem 0 0 0;
+}
+
+.principles li {
+    border-left: 4px solid var(--accent);
+    padding: 5px;
 }
 
 /* ---------- OPTIONAL PULL QUOTE ---------- */
 blockquote.pullQuote {
-  margin: 1.8rem 0;
-  padding: 1rem 1.2rem;
-  border-left: 4px solid rgba(0,0,0,0.25);
-  background: rgba(255,255,255,0.25);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  opacity: 0.9;
+    margin: 1.8rem 0;
+    padding: 1rem 1.2rem;
+    border-left: 4px solid rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.25);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
 /* ---------- “CARD” FEEL WITHOUT HEAVY UI ---------- */
-.infoBlock + .infoBlock {
-  border-top: 1px solid rgba(0,0,0,0.08);
-  padding-top: 2.2rem;
+.infoBlock+.infoBlock {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 2.2rem;
 }
+
 
 /* ---------- Responsive: Info page ---------- */
 @media (max-width: 768px) {
-  .resume {
-    padding: 0 6%;
-  }
+    .resume {
+        padding: 0 6%;
+    }
 
-  .infoBlock {
-    margin-bottom: 2.6rem;
-  }
+    .infoBlock {
+        margin-bottom: 2.6rem;
+    }
 
-  .heroTitle {
-    font-size: clamp(1.5rem, 6vw, 2.1rem);
-  }
+    .heroTitle {
+        font-size: clamp(1.5rem, 6vw, 2.1rem);
+    }
 
-  .contactRow {
-    gap: 0.9rem;
-  }
+    .contactRow {
+        gap: 0.9rem;
+    }
 
-  .principles li {
-    padding: 0.8rem 0.9rem;
-  }
+    .principles li {
+        padding: 0.8rem 0.9rem;
+    }
 }
 
 @media only screen and (max-width: 700px) {

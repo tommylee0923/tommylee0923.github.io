@@ -2,32 +2,23 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Tommy Lee | About me">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Tommy Lee">
-    <meta name="robots" content="index, follow">
-    <meta name="keywords" content="architecture, portfolio, Tommy Lee, design, civil engineering, computational design">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8" />
+    <meta name="description" content="Tommy Lee | Background" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Tommy Lee" />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="AEC software, BIM, IFC, automation, Tommy Lee" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- #region Social Media -->
-    <meta property="og:title" content="Tommy Lee">
-    <meta property="og:description"
-        content="Explore Tommy Lee's architecture portfolio showcasing his skills in design, computational techniques, and engineering.">
-    <!-- <meta property="og:image" content="https://example.com/path-to-image.jpg">
-    <meta property="og:url" content="https://example.com"> -->
-    <meta property="og:type" content="website">
-
-    <!-- <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tommy Lee Info">
-    <meta name="twitter:description"
-        content="Explore Tommy Lee's architecture portfolio showcasing his skills in design, computational techniques, and engineering.">
-    <meta name="twitter:image" content="https://example.com/path-to-image.jpg"> -->
-    <!-- #endregion -->
+    <!-- Social Media -->
+    <meta property="og:title" content="Tommy Lee" />
+    <meta property="og:description" content="Background and context: architecture, engineering, and AEC software." />
+    <meta property="og:type" content="website" />
 
     <title>Tommy Lee Info</title>
-    <link rel="stylesheet" href="./css/global.css?v=1.1">
-    <link rel="stylesheet" href="./css/style.css?v=1.1">
+
+    <link rel="stylesheet" href="./css/global.css?v=1.1" />
+    <link rel="stylesheet" href="./css/style.css?v=1.1" />
     <script defer src="./javascript/script_infoPage.js?v=1.1"></script>
 </head>
 
@@ -35,91 +26,121 @@
     <header class="header">
         <div class="site_header">
             <div class="logoContainer">
-                <h2 class="logo">Tommy Lee</h2>
+                <h2 class="logo">
+                    <a class="homePage" href="./index.html">Tommy Lee</a>
+                </h2>
             </div>
-            <nav class="linkContainer">
-                <a id="project_infoPage" class="projectButton" href="./index.html">Projects</a>
+
+            <nav class="linkContainer" aria-label="Primary">
+                <a id="project_infoPage" class="projectButton" href="./projects.html">Projects</a>
                 <span id="info_infoPage" class="infoButton is-active" aria-current="page">Info</span>
             </nav>
         </div>
     </header>
-    <!-- Resume Section (About, Experience, Skills) -->
+
     <main class="resume">
         <div class="resumeContainer">
+
+            <!-- HERO (softened: Background + headshot) -->
             <section class="hero infoBlock">
                 <div class="heroGrid">
-
                     <div class="heroText">
                         <h1 class="heroTitle">
-                            Building software for AEC workflows,<br>
-                            grounded in architecture and engineering.
+                            Background
                         </h1>
                         <p class="heroLead">
-                            I focus on BIM / IFC tooling, automation, and model data quality—bridging design knowledge
-                            with development.
+                            I’m trained in civil engineering and architecture, with a growing focus on
+                            software and automation for AEC workflows.
+                        </p>
+                        <p class="heroLead">
+                            My work sits between design intent and implementation, shaped by both
+                            professional practice and independent tool-building.
                         </p>
                     </div>
+
                     <div class="heroPhoto">
-                        <img src="./image/headshot.jpg" alt="Headshot of Tommy Lee" loading="eager" decoding="async">
+                        <img src="./image/headshot.jpg" alt="Headshot of Tommy Lee" loading="eager" decoding="async" />
                     </div>
                 </div>
             </section>
 
-            <!-- About Me Section -->
+            <!-- WHY AEC SOFTWARE -->
             <section class="about infoBlock">
-                <h2>About Me</h2>
+                <h2>Why AEC Software</h2>
                 <p>
-                    I work at the intersection of architecture, engineering, and software.
-                    My background is in civil engineering and architecture, but my focus is on
-                    building tools around AEC workflows, making design data more usable,
-                    auditable, and automatable.
+                    Through architectural training and professional work, I became increasingly aware that many
+                    design and construction challenges are not design problems, but tooling problems.
                 </p>
                 <p>
-                    I'm interested in software-focused roles where design knowledge and software development meet:
-                    AEC Software Engineer, Design Technologist, BIM Developer, or Computational Designer.
+                    Data loss between platforms, inconsistent models, manual quality checks, and brittle workflows
+                    can introduce risk and inefficiency long before construction begins.
                 </p>
+                <p>
+                    Learning to code (initially from scripting and gradually through software
+                    development) changed how I approached these issues. Instead of working around limitations,
+                    I began building tools to reduce friction, automate checks, and make model data more reliable.
+                </p>
+
+                <!-- HOW I WORK -->
+                <h2>How I Work</h2>
+                <ul class="principles">
+                    <li>
+                        <strong>Design-aware software thinking:</strong>
+                        I build tools with an understanding of how architects and engineers actually model and
+                        coordinate,
+                        not just how data is structured in an API.
+                    </li>
+                    <li>
+                        <strong>Incremental and testable development:</strong>
+                        I prefer small, composable tools with clear inputs and outputs over monolithic systems.
+                    </li>
+                    <li>
+                        <strong>Learning through building:</strong>
+                        Most of my technical growth comes from personal projects that address real workflow problems.
+                    </li>
+                </ul>
+
+                <!-- EDUCATION & CREDENTIALS -->
+                <h2>Education &amp; Credentials</h2>
+                <p>
+                    I hold a Bachelor of Science in Civil Engineering and a Master of Architecture.
+                    This dual background informs how I think about constraints, systems, and implementation
+                    across design and construction.
+                </p>
+                <p>
+                    I have passed the FE exam and am currently awaiting EIT certification.
+                </p>
+
+                <!-- TOOLS -->
+                <h2>Tools &amp; Context</h2>
+                <p>
+                    My work spans AEC production workflows and the tooling that supports them.
+                    In practice, that means a <span class="highlight">mix of 2D drafting and documentation, 3D modeling,
+                    and lightweight automation</span> where it removes repetitive effort.
+                </p>
+                <p>
+                    I'm most experienced with <span class="highlight">AutoCAD and Civil 3D for 2D CAD workflows, and Rhino + Grasshopper
+                    for 3D modeling and computational design</span>. I'm also comfortable with graphics and visualization
+                    tools across the Adobe suite and rendering workflows (e.g., V-Ray).
+                </p>
+                <p>
+                    On the software side, I build small, focused tools in C#/.NET and web interfaces with
+                    HTML/CSS/JavaScript. My IFC exposure so far is primarily through a single project:
+                    <span class="highlight">IfcQA</span>, where I explored model validation and reporting as a way to
+                    make BIM data easier to audit and communicate.
+                </p>
+
+                <!-- CONTACT -->
+                <h2>Contact</h2>
                 <div class="contactRow">
                     <a href="mailto:tommylee0923@gmail.com">Email</a>
                     <a href="https://github.com/tommylee0923" target="_blank" rel="noopener">GitHub</a>
                     <a href="https://www.linkedin.com/in/tommy-lee-5a32a11a2" target="_blank"
                         rel="noopener">LinkedIn</a>
                 </div>
+            </section>
 
-                <h2>Why AEC Software</h2>
-                <p>
-                    Through architectural training and professional work, I became increasingly aware that
-                    many design and construction problems are not design problems, but tooling problems:
-                    data loss between platforms, inconsistent models, manual QA, and brittle workflows.
-                </p>
-                <p>
-                    Learning to code with scripting and gradually moving into structured software
-                    development have changed how I approach these issues. Instead of working around limitations,
-                    I began building small tools to reduce friction, automate checks, and make models more
-                    reliable.
-                </p>
-                <h2>How I Work</h2>
-                <ul class="principles">
-                    <li>
-                        <strong>Design-aware software thinking:</strong>
-                        I build tools with an understanding of how architects and engineers actually model,
-                        not just how APIs expect data to look.
-                    </li>
-                    <li>
-                        <strong>Incremental, testable development:</strong>
-                        I prefer small, composable tools with clear inputs and outputs rather than monolithic systems.
-                    </li>
-                    <li>
-                        <strong>Learning through building:</strong>
-                        Most of my technical growth comes from personal projects that solve real problems.
-                    </li>
-                </ul>
-                <h2>Looking Ahead</h2>
-                <p>
-                    I'm focused on growing further into a role focused on AEC software development, design automation,
-                    and platform-level workflows while staying grounded in architectural and engineering practice.
-                    Much of my recent work focuses on BIM- and IFC-based tooling, including model validation,
-                    automation, and data quality checks, which are documented throughout this site.
-                </p>
+        </div>
     </main>
 
     <footer class="footer">
@@ -127,7 +148,6 @@
             <p>© 2026 Tommy Lee. All rights reserved.</p>
         </div>
     </footer>
-
 </body>
 
 </html>

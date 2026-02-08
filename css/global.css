@@ -1,37 +1,49 @@
-
 @font-face {
     font-family: 'Futura';
     src: url('../fonts/FuturaLT-Light.woff2') format('woff2'),
-         url('../fonts/FuturaLT-Light.woff') format('woff');
-    font-weight: 100; /* Futura Light */
+        url('../fonts/FuturaLT-Light.woff') format('woff');
+    font-weight: 100;
+    /* Futura Light */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Futura';
     src: url('../fonts/FuturaLT-Book.woff2') format('woff2'),
-         url('../fonts/FuturaLT-Book.woff') format('woff');
-    font-weight: 300; /* Futura Book */
+        url('../fonts/FuturaLT-Book.woff') format('woff');
+    font-weight: 300;
+    /* Futura Book */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Futura';
     src: url('../fonts/FuturaLT-Heavy.woff2') format('woff2'),
-         url('../fonts/FuturaLT-Heavy.woff') format('woff');
-    font-weight: 700; /* Futura Light */
+        url('../fonts/FuturaLT-Heavy.woff') format('woff');
+    font-weight: 700;
+    /* Futura Light */
     font-style: normal;
 }
 
 :root {
     --background: rgb(247, 242, 244);
-    --scrollbar-width: 0px; /* default, will be updated via JS */
+    --scrollbar-width: 0px;    /* default, will be updated via JS */
+   
+    /* Accent colors */
+    --accent: #0F766E;
+    --accent-soft: rgba(15, 118, 110, 0.14);
+    --text: rgba(0, 0, 0, 0.88);
+    --muted: rgba(0, 0, 0, 0.62);
 }
 
 * {
     font-family: 'Futura', sans-serif;
     font-weight: 300;
     box-sizing: border-box;
+}
+
+.highlight {
+    color: var(--accent);
 }
 
 html {
@@ -50,21 +62,27 @@ body {
 
 /* For Webkit browsers like Chrome, Safari */
 .scrollable::-webkit-scrollbar {
-    width: 7px; /* Set width for vertical scrollbar */
-    height: 7px; /* Set height for horizontal scrollbar */
+    width: 7px;
+    /* Set width for vertical scrollbar */
+    height: 7px;
+    /* Set height for horizontal scrollbar */
 }
 
 .scrollable::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Color of the track (the empty space behind the scrollbar) */
+    background: #f1f1f1;
+    /* Color of the track (the empty space behind the scrollbar) */
 }
 
 .scrollable::-webkit-scrollbar-thumb {
-    background: #666; /* Color of the scrollbar itself */
-    border-radius: 0px; /* Rounded corners for the scrollbar */
+    background: #666;
+    /* Color of the scrollbar itself */
+    border-radius: 0px;
+    /* Rounded corners for the scrollbar */
 }
 
 .scrollable::-webkit-scrollbar-thumb:hover {
-    background: #888; /* Darker color when hovering over the scrollbar */
+    background: #888;
+    /* Darker color when hovering over the scrollbar */
 }
 
 /* for Firefox */
@@ -90,13 +108,15 @@ body.no-scroll {
     padding-left: 15%;
     padding-right: 15%;
     padding-top: 50px;
-    padding-bottom: 90px;
+    padding-bottom: 75px;
 }
 
 .site_header {
     display: flex;
-    justify-content: space-between; /* Distributes items with space between them */
-    align-items: bottom; /* Optional: aligns items vertically (centered) */
+    justify-content: space-between;
+    /* Distributes items with space between them */
+    align-items: bottom;
+    /* Optional: aligns items vertically (centered) */
     border: none;
 }
 
@@ -115,6 +135,22 @@ body.no-scroll {
     text-transform: uppercase;
     align-self: flex-end;
 }
+
+.homePage {
+    text-decoration: none;
+    color: var(--text);
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 500;
+    line-height: 36px;
+    text-transform: uppercase;
+    align-self: flex-end;
+}
+
+.homePage:hover {
+    color: var(--accent);
+}
+
 /* --------- Accessible utility --------- */
 .sr-only {
     position: absolute;
@@ -123,7 +159,7 @@ body.no-scroll {
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0,0,0,0);
+    clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
 }
@@ -136,7 +172,8 @@ body.no-scroll {
     align-items: flex-end;
 }
 
-.projectButton, .infoButton {
+.projectButton,
+.infoButton {
     color: black;
     display: inline-block;
     min-width: 80px;
@@ -150,22 +187,36 @@ body.no-scroll {
     background-color: var(--background);
 }
 
-.projectButton:hover, .infoButton:Hover {
-    color: black;
+.projectButton:hover,
+.infoButton:Hover {
+    color: var(--accent);
     font-weight: 300;
 }
 
-.projectButton.is-active, .infoButton.is-active,
-.projectButton[aria-current="page"], .infoButton[aria-current="page"] {
+.projectButton.is-active,
+.infoButton.is-active,
+.projectButton[aria-current="page"],
+.infoButton[aria-current="page"] {
     color: black;
     text-decoration: underline;
     font-weight: 300;
-} 
+}
 
-.projectButton a, .infoButton a {
+.projectButton a,
+.infoButton a {
     display: inline-block;
-    min-width: 80px; /* Set a fixed or minimum width */
+    min-width: 80px;
+    /* Set a fixed or minimum width */
     text-align: right;
+}
+
+/* Accent */
+.projectButton.is-active,
+.infoButton.is-active,
+.projectRowButton.is-active,
+[aria-current="page"] {
+  color: var(--accent) !important;
+  text-decoration-color: var(--accent);
 }
 
 /* --------- Project row --------- */
@@ -180,7 +231,9 @@ body.no-scroll {
     right: 15%;
 }
 
-.projectRow.hidden { display:none; }
+.projectRow.hidden {
+    display: none;
+}
 
 .projectRowButton {
     display: inline-block;
@@ -197,7 +250,8 @@ body.no-scroll {
     font-weight: 300;
 }
 
-.projectRowButton.is-active, .projectRowButton[aria-current="page"] {
+.projectRowButton.is-active,
+.projectRowButton[aria-current="page"] {
     color: black;
     text-decoration: underline;
     font-weight: 300;
@@ -218,12 +272,15 @@ body.no-scroll {
         line-height: 30px;
     }
 
-    #project_projectPage, #info_infoPage, #info_projectPage, #project_infoPage {
+    #project_projectPage,
+    #info_infoPage,
+    #info_projectPage,
+    #project_infoPage {
         font-size: 14px;
     }
 
     .projectRowButton {
-        font-size:12px;
+        font-size: 12px;
     }
 }
 
@@ -233,12 +290,15 @@ body.no-scroll {
         line-height: 24px;
     }
 
-    #project_projectPage, #info_infoPage, #info_projectPage, #project_infoPage {
+    #project_projectPage,
+    #info_infoPage,
+    #info_projectPage,
+    #project_infoPage {
         font-size: 1rem;
     }
 
     .projectRowButton {
-        font-size:.9rem;
+        font-size: .9rem;
     }
 }
 
@@ -248,12 +308,15 @@ body.no-scroll {
         line-height: 18px;
     }
 
-    #project_projectPage, #info_infoPage, #info_projectPage, #project_infoPage {
+    #project_projectPage,
+    #info_infoPage,
+    #info_projectPage,
+    #project_infoPage {
         font-size: 0.9rem;
     }
 
     .projectRowButton {
-        font-size:.8rem;
+        font-size: .8rem;
     }
 }
 
@@ -263,12 +326,15 @@ body.no-scroll {
         line-height: 12px;
     }
 
-    #project_projectPage, #info_infoPage, #info_projectPage, #project_infoPage {
+    #project_projectPage,
+    #info_infoPage,
+    #info_projectPage,
+    #project_infoPage {
         font-size: 0.8rem;
     }
 
     .projectRowButton {
-        font-size:.6rem;
+        font-size: .6rem;
     }
 }
 
