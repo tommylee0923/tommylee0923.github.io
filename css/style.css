@@ -42,7 +42,7 @@
 .homeTitle::after {
     content: "";
     display: block;
-    width: 320px;
+    width: 150px;
     height: 4px;
     background: var(--accent);
     margin-top: 14px;
@@ -84,7 +84,7 @@
 }
 
 .homeSection {
-    padding-top: 2.2rem;
+    padding: 2.2rem 0;
     border-top: 1px solid var(--accent-soft);
 }
 
