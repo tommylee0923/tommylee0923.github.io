@@ -30,9 +30,24 @@
             </div>
 
             <nav class="linkContainer" aria-label="Primary">
-                <!-- On homepage, keep Projects as the main “proof” path -->
-                <a class="projectButton" href="./projects.html">Projects</a>
-                <a class="infoButton" href="./info.html">Info</a>
+                <div class="navDropdown">
+                    <button class="navDropdownToggle" type="button" aria-expanded="false" aria-controls="workDropdown">
+                        <span class="workButton left-align">Work
+                            <span class="navCaret" aria-hidden="true">▾</span>
+                        </span>
+                    </button>
+
+                    <div class="navDropdownMenu" id="workDropdown" role="menu" aria-label="Work sections">
+                        <a href="./codeProject.html" class="navDropdownLink" role="menuitem">
+                            BIM &amp; Software
+                        </a>
+                        <a href="./projects.html" class="navDropdownLink" role="menuitem">
+                            Architecture
+                        </a>
+                    </div>
+                </div>
+
+                <a href="./info.html" class="infoButton">Info</a>
             </nav>
         </div>
 

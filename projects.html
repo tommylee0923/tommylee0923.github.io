@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Tommy Lee">
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="aec software, bim tools, ifc validation, ifc qa, model checking, bim automation, c# .net, xbim, bim workflows, aec tech portfolio, civil engineering, architecture">
+    <meta name="keywords"
+        content="aec software, bim tools, ifc validation, ifc qa, model checking, bim automation, c# .net, xbim, bim workflows, aec tech portfolio, civil engineering, architecture">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- #region Social Media -->
@@ -30,21 +31,33 @@
         <div class="site_header">
             <div class="logoContainer">
                 <h2 class="logo">
-                    <a class="homePage" href="./index.html">
-                        Tommy Lee
-                    </a>
+                    <a class="homePage" href="./index.html">Tommy Lee</a>
                 </h2>
             </div>
-            <nav class="linkContainer">
-                <span class="projectButton is-active" aria-current="page">Projects</span>
-                <a id="info_projectPage" class="infoButton" href="./info.html">Info</a>
+            <nav class="linkContainer" aria-label="Primary">
+                <div class="navDropdown isStatic">
+                    <span class="navDropdownToggle workButton left-align is-active" type="button" aria-expanded="true"
+                        aria-controls="workDropdown">
+
+                        <span>Work</span>
+                        <span class="navCaret" aria-hidden="true">▾</span>
+
+                </span>
+
+                    <div class="navDropdownMenu navAlwaysOpen" id="workDropdown" role="menu">
+                        <a href="./codeProject.html" class="navDropdownLink">
+                            BIM &amp; Software
+                        </a>
+
+                        <span class="navDropdownLink is-active" aria-current="page">
+                            Architecture
+                        </span>
+                    </div>
+                </div>
+
+                <a class="infoButton" href="./info.html">Info</a>
             </nav>
         </div>
-        <nav id="projectRow" class="projectRow">
-            <span class="projectRowButton is-active" aria-current="page">Architectural</span>
-            <a class="projectRowButton" href="./codeProject.html">Coding</a>
-            <a class="projectRowButton" href="./otherProject.html">Other</a>
-        </nav>
     </header>
 
     <section class="projectList" aria-labelledby="projectsHeading">

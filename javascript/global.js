@@ -276,5 +276,26 @@
     }
   }
 
+  // Navigation Header
+  const dropdown = document.querySelector('.navDropdown');
+  const toggle = document.querySelector('.navDropdownToggle');
+  const menu = document.querySelector('.navDropdownMenu');
+
+  if (dropdown && toggle && menu && !dropdown.classList.contains('isStatic')) {
+
+    toggle.addEventListener('click', () => {
+      const isOpen = dropdown.classList.toggle('isOpen');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('isOpen');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+  }
+
   document.addEventListener("DOMContentLoaded", init);
 })();

@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="./css/global.css?v=1.1" />
     <link rel="stylesheet" href="./css/style.css?v=1.1" />
+    <script defer src="./javascript/global.js?v=1.1"></script>
     <script defer src="./javascript/script_infoPage.js?v=1.1"></script>
 </head>
 
@@ -32,9 +33,30 @@
             </div>
 
             <nav class="linkContainer" aria-label="Primary">
-                <a id="project_infoPage" class="projectButton" href="./projects.html">Projects</a>
+                <div class="navDropdown">
+                    <button class="navDropdownToggle" type="button" aria-expanded="false" aria-controls="workDropdown">
+                        <span class="workButton left-align">Work
+                            <span class="navCaret" aria-hidden="true">▾</span>
+                        </span>
+                    </button>
+
+                    <div class="navDropdownMenu" id="workDropdown" role="menu" aria-label="WOrk sections">
+                        <a href="./codeProject.html" class="navDropdownLink" role="menuitem">
+                            BIM &amp; Software
+                        </a>
+                        <a href="./projects.html" class="navDropdownLink" role="menuitem">
+                            Architecture
+                        </a>
+                    </div>
+                </div>
+
                 <span id="info_infoPage" class="infoButton is-active" aria-current="page">Info</span>
             </nav>
+
+            <!-- <nav class="linkContainer" aria-label="Primary">
+                <a id="project_infoPage" class="projectButton" href="./projects.html">Projects</a>
+                <span id="info_infoPage" class="infoButton is-active" aria-current="page">Info</span>
+            </nav> -->
         </div>
     </header>
 

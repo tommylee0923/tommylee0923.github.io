@@ -37,18 +37,35 @@
     <header class="header">
         <div class="site_header">
             <div class="logoContainer">
-                <h2 class="logo">Tommy Lee</h2>
+                <h2 class="logo">
+                    <a class="homePage" href="./index.html">Tommy Lee</a>
+                </h2>
             </div>
-            <div class="linkContainer">
-                <span class="projectButton is-active" aria-current="page">Projects</span>
-                <a id="info_projectPage" class="infoButton" href="./info.html">info</a>
-            </div>
+            <nav class="linkContainer" aria-label="Primary">
+                <div class="navDropdown isStatic">
+                    <button class="navDropdownToggle workButton left-align is-active" type="button" aria-expanded="true"
+                        aria-controls="workDropdown">
+
+                        <span>Work</span>
+                        <span class="navCaret" aria-hidden="true">▾</span>
+
+                    </button>
+
+                    <div class="navDropdownMenu navAlwaysOpen" id="workDropdown" role="menu">
+                        <span class="navDropdownLink is-active" aria-current="page">
+                            BIM &amp; Software
+                        </span>
+
+                        <a href="./projects.html" class="navDropdownLink">
+                            Architecture
+                        </a>
+                    </div>
+                </div>
+
+
+                <a class="infoButton" href="./info.html">Info</a>
+            </nav>
         </div>
-        <nav id="projectRow" class="projectRow">
-            <a class="projectRowButton" href="./projects.html">Architectural</a>
-            <span class="projectRowButton is-active" aria-current="page">Coding</span>
-            <a class="projectRowButton" href="./otherProject.html">Other</a>
-        </nav>
     </header>
 
     <section class="projectList">
@@ -59,8 +76,8 @@
                 <button type="button" class="projectImgContainer" data-project data-key="SnakeGame"
                     data-title="Snake Game" data-subtitle="" data-dir="./image/webp/Projects/SnakeGame/" data-count="1"
                     data-ext=".webp" aria-label="Open project: Snake Game">
-                    <img src="./image/webp/Projects/SnakeGame/1.webp" alt="Snake Game - cover image"
-                        class="projectImg" loading="lazy" decoding="async" width="600" height="400">
+                    <img src="./image/webp/Projects/SnakeGame/1.webp" alt="Snake Game - cover image" class="projectImg"
+                        loading="lazy" decoding="async" width="600" height="400">
                     <span class="hoverProjectImgText">Snake Game</span>
                 </button>
             </li>

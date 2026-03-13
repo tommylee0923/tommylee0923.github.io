@@ -167,13 +167,81 @@ body.no-scroll {
 
 /* --------- Header nav --------- */
 .linkContainer {
-    grid-area: link;
     display: flex;
-    gap: 18px;
-    align-items: flex-end;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-.projectButton,
+.navDropdown {
+    position: relative;
+}
+
+.navDropdownToggle {
+    align-items: center;
+    gap: 0.35rem;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+
+.navCaret {
+    font-size: 0.8em;
+    transform: translateY(-1px);
+}
+
+.navDropdownMenu {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 0;
+    min-width: 12rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.navDropdown.isOpen .navDropdownMenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.navAlwaysOpen {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.navDropdown.isStatic .navDropdownMenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.navDropdown.isStatic .navCaret {
+    transform: rotate(180deg);
+}
+
+.navDropdownLink {
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
+    font-weight: 100;
+}
+
+.navDropdownLink.is-active,
+.navDropdownLink[aria-current="page"] {
+    font-weight: 300;
+    text-decoration: underline;
+}
+
+.workButton,
 .infoButton {
     color: black;
     display: inline-block;
@@ -188,27 +256,31 @@ body.no-scroll {
     background-color: var(--background);
 }
 
-.projectButton:hover,
-.infoButton:Hover {
+.workButton.left-align {
+    text-align: left;
+    padding-left: 0;
+}
+
+button .workButton:Hover,
+.infoButton:Hover,
+.navDropdownLink:Hover {
     color: var(--accent);
     font-weight: 300;
 }
 
-.projectButton.is-active,
 .infoButton.is-active,
-.projectButton[aria-current="page"],
 .infoButton[aria-current="page"] {
-    color: black;
     text-decoration: underline;
-    font-weight: 300;
+    font-weight: 100;
+    color: var(--accent) !important;
+    text-decoration-color: var(--accent);
 }
 
-.projectButton a,
-.infoButton a {
-    display: inline-block;
-    min-width: 80px;
-    /* Set a fixed or minimum width */
-    text-align: right;
+.workButton.is-active,
+.workButton[aria-current="page"] {
+    text-decoration: none;
+    font-weight: 300;
+    pointer-events: none;
 }
 
 /* Accent */
@@ -273,7 +345,7 @@ body.no-scroll {
         padding-left: 6%;
         padding-right: 6%;
     }
-    
+
     .logo,
     .homePage {
         font-size: 2.4rem;
