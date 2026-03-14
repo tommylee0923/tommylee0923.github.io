@@ -486,6 +486,24 @@
     text-align: right;
 }
 
+.projectFigure {
+  margin: 2rem 0;
+}
+
+.projectInlineImg {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.projectFigure figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.6rem;
+  line-height: 1.4;
+}
+
 .projectDescription {
     margin: 30px;
     line-height: 20px;
